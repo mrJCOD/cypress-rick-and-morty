@@ -6,12 +6,12 @@ describe('Listar todos os personagens', () => {
 
     it('Listar todos os personagens - Sucesso', () => {
 
-        
+
         cy.request({
             method: 'GET',
             url: baseUrl + '/character',
             headers: { 'Accept-Language': 'pt-BR', },
-        }).then((responseGet)=>{
+        }).then((responseGet) => {
 
             expect(responseGet.status).to.eq(200)
             expect(responseGet.body).is.not.null
@@ -20,7 +20,7 @@ describe('Listar todos os personagens', () => {
             expect(responseGet.body.results[15].name).to.eq('Amish Cyborg')
 
         })
-        
+
     })
 
     it.only('Listar todos os personagens - Falha', () => {
@@ -30,7 +30,7 @@ describe('Listar todos os personagens', () => {
             url: baseUrl + '/characte',
             failOnStatusCode: false,
             headers: { 'Accept-Language': 'pt-BR', },
-        }).then((responseGet)=>{
+        }).then((responseGet) => {
 
             expect(responseGet.status).to.eq(404)
             expect(responseGet.body).is.not.null
@@ -40,6 +40,6 @@ describe('Listar todos os personagens', () => {
         })
 
 
-        
+
     });
 });
