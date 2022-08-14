@@ -42,7 +42,7 @@ describe('Listar Unico personagem', () => {
             expect(response.status).to.eq(404)
             expect(response.body).is.not.null
             expect(response.body.error).to.eq('Character not found')
-            
+
         })
 
     });
@@ -59,7 +59,7 @@ describe('Listar Unico personagem', () => {
             expect(response.status).to.eq(500)
             expect(response.body).is.not.null
             expect(response.body.error).to.eq('Hey! you must provide an id')
-            
+
         })
 
     });
