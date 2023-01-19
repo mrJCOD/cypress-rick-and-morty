@@ -8,7 +8,7 @@ describe('Filtro de Personagens', () => {
             method: 'GET',
             url: baseUrl + '/character/?name=Albert&status=Dead',
             headers: { 'Accept-Language': 'en-us', },
-        }).then((response) => {
+        }).then((response) =>  {
 
             expect(response.status).to.eq(200)
             expect(response.body).is.not.null
