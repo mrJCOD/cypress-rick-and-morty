@@ -5,7 +5,7 @@
 describe('Listar Unico personagem', () => {
     it('Listar um personagem - Sucesso', () => {
         const baseUrl = "https://rickandmortyapi.com/api"
-        cy.request({
+        cy.api({
             method: 'GET',
             url: baseUrl + '/character/15',
             headers: { 'Accept-Language': 'en-us', },
@@ -32,7 +32,7 @@ describe('Listar Unico personagem', () => {
 
     it('Listar um personagem que nao existe - Falha', () => {
         const baseUrl = "https://rickandmortyapi.com/api"
-        cy.request({
+        cy.api({
             method: 'GET',
             url: baseUrl + '/character/3209',
             failOnStatusCode: false,
@@ -49,7 +49,7 @@ describe('Listar Unico personagem', () => {
 
     it('Listar um personagem endpoint errado - Falha', () => {
         const baseUrl = "https://rickandmortyapi.com/api"
-        cy.request({
+        cy.api({
             method: 'GET',
             url: baseUrl + '/character/perso1',
             failOnStatusCode: false,

@@ -7,7 +7,7 @@ describe('Listar todos os personagens', () => {
     it('Listar todos os personagens - Sucesso', () => {
 
 
-        cy.request({
+        cy.api({
             method: 'GET',
             url: baseUrl + '/character',
             headers: { 'Accept-Language': 'pt-BR', },
@@ -25,7 +25,7 @@ describe('Listar todos os personagens', () => {
 
     it.only('Listar todos os personagens - Falha', () => {
 
-        cy.request({
+        cy.api({
             method: 'GET',
             url: baseUrl + '/characte',
             failOnStatusCode: false,
